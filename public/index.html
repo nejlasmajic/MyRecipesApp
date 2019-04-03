@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="js/RecipesController.js"></script>
+<script>
+        var app = angular.module('MyRecipesApp', []);
+        app.controller('RecipesController', RecipesController);
+</script>
+<body>
+     <div ng-app="MyRecipesApp">
+        <h1>MY RECIPES APP</h1>
+   
+        <h2>MyRecipes List</h2>
+        <div ng~controller = "RecipesController">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng~repeat="recipe in recipes_list">
+                        <td>{{recipe.Name}}</td>
+                        <td>{{recipe.Category}}</td>        
+                    </tr>
+                </tbody>   
+            </table>    
+        </div>
+    </div>
+</body>
+</html> 
