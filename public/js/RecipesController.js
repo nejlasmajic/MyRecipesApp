@@ -1,10 +1,13 @@
-function RecipesController($scope)
+function RecipesController($scope, $http)
 {
-    console.log("Hello from recipe controller");
+    $http.get('/static').then(function(response){
 
-    $scope.recipes_list = [ 
-    {Name:"Saher torta",Category:"dessert"},
-    {Name:"Esterhazi torta",Category:"dessert"},
-    {Name:"Princeza torta",Category:"dessert"},
-    {Name:"Almasina torta",Category:"dessert"}, ];
+        $scope.recipes_list = response.data;
+
+    }, function(response){
+
+        $scope.recipes_list = response.data;
+        
+    })
 }
+

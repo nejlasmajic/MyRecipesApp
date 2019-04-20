@@ -12,16 +12,16 @@
         <h1>MY RECIPES APP</h1>
    
         <h2>MyRecipes List</h2>
-        <div ng~controller = "RecipesController">
+        <div ng-controller = "RecipesController">
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Category</th>
+                        <th scope = "col">Name</th>
+                        <th scope = "col">Category</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr ng~repeat="recipe in recipes_list">
+                <tbody> 
+                    <tr ng-repeat="recipe in recipes_list">
                         <td>{{recipe.Name}}</td>
                         <td>{{recipe.Category}}</td>        
                     </tr>
